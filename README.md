@@ -24,11 +24,51 @@ This repository documents what I learned at each level: the concepts involved, t
 
 ## Skills Practised
 
-- Linux command line fundamentals (`find`, `grep`, `file`, `sort`, `uniq`, `tar`, `base64`)
-- File permissions, ownership, and special permissions (SUID)
-- SSH usage and key-based authentication
-- Network utilities (`nc`, `nmap`, `openssl s_client`)
-- Cron jobs and scheduled task abuse
-- Basic scripting in Bash and Python
-- Web application fundamentals (HTTP, cookies, source inspection)
+Each wargame targets a different area of security. The skills listed are the ones each game is designed to build.
+
+### Core Progression
+
+#### Bandit (beginner)
+- **Prerequisites:** none
+- **Skills:** Linux command line, file searching and filtering (`find`, `grep`, `sort`, `uniq`), encoding and compression (`base64`, `tar`, `gzip`), SSH and key-based authentication, basic networking with `nc`, `nmap` and `openssl s_client`, Git basics, cron jobs, SUID binaries and shell escapes
+
+#### Leviathan (beginner to intermediate)
+- **Prerequisites:** Bandit
+- **Skills:** analysing compiled programs without source code (`ltrace`, `strings`), SUID binary abuse, symbolic link and race condition tricks, reading how a program behaves to find weaknesses
+
+#### Natas (web security)
+- **Prerequisites:** Bandit, basic HTTP knowledge
+- **Skills:** inspecting page source and HTTP headers, cookies and session handling, `robots.txt` and hidden directories, authentication flaws, file upload abuse, command injection, SQL injection, encoding and weak obfuscation, request manipulation with `curl` or an intercepting proxy
+
+#### Krypton (cryptography)
+- **Prerequisites:** Bandit, basic scripting
+- **Skills:** classical ciphers (Caesar, Vigenère, substitution), frequency analysis, key length analysis, known-plaintext attacks, weaknesses in simple stream ciphers and poor randomness
+
+#### Narnia (introduction to binary exploitation)
+- **Prerequisites:** Bandit, basic C
+- **Skills:** reading C source, stack buffer overflows, shellcode, environment variables, format string vulnerabilities, debugging with `gdb`
+
+#### Behemoth (intermediate binary exploitation)
+- **Prerequisites:** Narnia
+- **Skills:** buffer overflows, race conditions, privilege escalation via vulnerable SUID programs, working without source code, deeper `gdb` use
+
+#### Utumno (advanced)
+- **Prerequisites:** Narnia, Behemoth
+- **Skills:** memory corruption, ELF internals, crafting custom shellcode, exploiting under tighter constraints
+
+#### Maze (advanced)
+- **Prerequisites:** Utumno
+- **Skills:** analysing complex programs with minimal hints, developing custom exploits, applying a broad mix of earlier techniques
+
+### Skills Summary
+
+| Area | Games |
+|---|---|
+| Linux fundamentals | Bandit, Leviathan |
+| Scripting and automation | Bandit, Krypton, Natas |
+| Web application security | Natas |
+| Cryptography | Krypton |
+| Reverse engineering and binary analysis | Leviathan, Narnia, Behemoth, Utumno, Maze |
+| Exploit development | Narnia, Behemoth, Utumno, Maze |
+| Privilege escalation | Bandit, Leviathan, Behemoth |
 
